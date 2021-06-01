@@ -6,7 +6,7 @@ pipeline {
 
         stage("Test") {
             steps {
-                h "./mvnw verify"
+                sh "./mvnw verify"
             }
         }
 
