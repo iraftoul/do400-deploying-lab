@@ -34,5 +34,12 @@ pipeline {
                 }
         }
 
+        stage("Deploy to Prod") {
+            when { branch "main" }
+                steps {
+                    sh 'oc rollout latest dc/home-automation -n iraftoul-deploying-lab-prod'
+                }
+        }
+
     }
 }
